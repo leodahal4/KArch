@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Working with schemas: Libsecret Library Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="Libsecret Library Reference Manual">
+<link rel="up" href="migrating-api.html" title="API conversion">
+<link rel="prev" href="migrating-api.html" title="API conversion">
+<link rel="next" href="migrating-storing.html" title="Storing passwords and items">
+<meta name="generator" content="GTK-Doc V1.32.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="migrating-api.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="migrating-api.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="migrating-storing.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="migrating-schemas"></a>Working with schemas</h2></div></div></div>
+<p>libsecret is far more focused on schemas, and encourages users to
+	define a <a class="link" href="SecretSchema.html" title="SecretSchema"><span class="type">SecretSchema</span></a> for their password storage. The schema defines
+	which attributes are allowed an item. Each schema has a name which
+	is usually a dotted string (eg: <code class="literal">org.gnome.MyProject.Password</code>).
+	This name is stored in the item attributes. The schema name is also
+	used when looking up an item, to make sure that the stored schema
+	matches that used during the lookup. If you wish to lookup items that
+	were stored by libgnome-keyring, you should specify the 
+	<a class="link" href="SecretSchema.html#SECRET-SCHEMA-DONT-MATCH-NAME:CAPS"><code class="literal">SECRET_SCHEMA_DONT_MATCH_NAME</code></a> flag in the schema so that the schema
+	name is not matched, since it was not stored by libgnome-keyring.</p>
+<p>Schemas define whether an attribute should look like an integer,
+	a boolean, or a free-form string. These types are used when validating
+	the attribute values stored, even though the attribute values are
+	stored and matched as strings.</p>
+<p>Replacements for related libgnome-keyring functions and types
+	are described below:
+	</p>
+<div class="table">
+<a name="id-1.6.3.4.4.1"></a><p class="title"><b>Table 2. </b></p>
+<div class="table-contents"><table class="table" border="1">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>libgnome-keyring</th>
+<th>libsecret</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><span class="type">GnomeKeyringPasswordSchema</span></td>
+<td><a class="link" href="SecretSchema.html" title="SecretSchema"><span class="type">SecretSchema</span></a></td>
+</tr>
+<tr>
+<td><span class="type">GnomeKeyringPasswordSchemaAttribute</span></td>
+<td><a class="link" href="SecretSchema.html#SecretSchemaAttribute"><span class="type">SecretSchemaAttribute</span></a></td>
+</tr>
+<tr>
+<td><code class="literal">GNOME_KEYRING_ITEM_APPLICATION_SECRET</code></td>
+<td>no equivalent</td>
+</tr>
+<tr>
+<td><code class="literal">GNOME_KEYRING_ITEM_CHAINED_KEYRING_PASSWORD</code></td>
+<td>no equivalent</td>
+</tr>
+<tr>
+<td><code class="literal">GNOME_KEYRING_ITEM_ENCRYPTION_KEY_PASSWORD</code></td>
+<td>no equivalent</td>
+</tr>
+<tr>
+<td><code class="literal">GNOME_KEYRING_ITEM_PK_STORAGE</code></td>
+<td>no equivalent</td>
+</tr>
+<tr>
+<td><code class="literal">GNOME_KEYRING_ITEM_GENERIC_SECRET</code></td>
+<td>no equivalent, define a specific schema with an appropriate dotted name</td>
+</tr>
+<tr>
+<td><code class="literal">GNOME_KEYRING_ITEM_NETWORK_PASSWORD</code></td>
+<td>the <a class="link" href="SecretSchema.html#SECRET-SCHEMA-COMPAT-NETWORK:CAPS" title="SECRET_SCHEMA_COMPAT_NETWORK"><code class="literal">SECRET_SCHEMA_COMPAT_NETWORK</code></a> schema, although not recommended for new uses</td>
+</tr>
+<tr>
+<td><code class="literal">GNOME_KEYRING_ITEM_NOTE</code></td>
+<td>the <a class="link" href="SecretSchema.html#SECRET-SCHEMA-NOTE:CAPS" title="SECRET_SCHEMA_NOTE"><code class="literal">SECRET_SCHEMA_NOTE</code></a> schema</td>
+</tr>
+<tr>
+<td><code class="literal">GNOME_KEYRING_NETWORK_PASSWORD</code></td>
+<td>the <a class="link" href="SecretSchema.html#SECRET-SCHEMA-COMPAT-NETWORK:CAPS" title="SECRET_SCHEMA_COMPAT_NETWORK"><code class="literal">SECRET_SCHEMA_COMPAT_NETWORK</code></a> schema, although not recommended for new uses</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br class="table-break"></p>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32.1</div>
+</body>
+</html>

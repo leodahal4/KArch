@@ -1,0 +1,9 @@
+%FILES%
+boot/
+boot/amd-ucode.img
+usr/
+usr/share/
+usr/share/licenses/
+usr/share/licenses/amd-ucode/
+usr/share/licenses/amd-ucode/LICENSE.amd-ucode
+

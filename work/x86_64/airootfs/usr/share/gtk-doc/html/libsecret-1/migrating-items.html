@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Item management: Libsecret Library Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="Libsecret Library Reference Manual">
+<link rel="up" href="migrating-api.html" title="API conversion">
+<link rel="prev" href="migrating-removing.html" title="Removing passwords and icons">
+<link rel="next" href="migrating-keyrings.html" title="Keyring management">
+<meta name="generator" content="GTK-Doc V1.32.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="migrating-api.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="migrating-removing.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="migrating-keyrings.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="migrating-items"></a>Item management</h2></div></div></div>
+<p>In libsecret items are no longer identified by an unsigned integer.
+	Applications should retrieve items based on their attributes. It is also
+	possible to identify an item by its DBus object path.</p>
+<p>Replacements for related libgnome-keyring functions and types
+	are described below:
+	</p>
+<div class="table">
+<a name="id-1.6.3.8.3.1"></a><p class="title"><b>Table 6. </b></p>
+<div class="table-contents"><table class="table" border="1">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>libgnome-keyring</th>
+<th>libsecret</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><code class="function">gnome_keyring_item_create()</code></td>
+<td>
+<a class="link" href="SecretItem.html#secret-item-create" title="secret_item_create ()"><code class="function">secret_item_create()</code></a>, although <a class="link" href="libsecret-Password-storage.html#secret-password-store" title="secret_password_store ()"><code class="function">secret_password_store()</code></a> may be simpler</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_item_create_sync()</code></td>
+<td>
+<a class="link" href="SecretItem.html#secret-item-create-sync" title="secret_item_create_sync ()"><code class="function">secret_item_create_sync()</code></a>, although <a class="link" href="libsecret-Password-storage.html#secret-password-store-sync" title="secret_password_store_sync ()"><code class="function">secret_password_store_sync()</code></a> may be simpler</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_item_delete()</code></td>
+<td>
+<a class="link" href="SecretItem.html#secret-item-delete" title="secret_item_delete ()"><code class="function">secret_item_delete()</code></a>, although <a class="link" href="libsecret-Password-storage.html#secret-password-clear" title="secret_password_clear ()"><code class="function">secret_password_clear()</code></a> may be simpler</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_item_delete_sync()</code></td>
+<td>
+<a class="link" href="SecretItem.html#secret-item-delete-sync" title="secret_item_delete_sync ()"><code class="function">secret_item_delete_sync()</code></a>, although <a class="link" href="libsecret-Password-storage.html#secret-password-clear-sync" title="secret_password_clear_sync ()"><code class="function">secret_password_clear_sync()</code></a> may be simpler</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_item_get_info()</code></td>
+<td>properties are loaded on a <a class="link" href="SecretItem.html" title="SecretItem"><span class="type">SecretItem</span></a> automatically, use
+			<a class="link" href="SecretItem.html#secret-item-load-secret" title="secret_item_load_secret ()"><code class="function">secret_item_load_secret()</code></a> to load the secret</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_item_get_info_sync()</code></td>
+<td>properties are loaded on a <a class="link" href="SecretItem.html" title="SecretItem"><span class="type">SecretItem</span></a> automatically, use
+			<a class="link" href="SecretItem.html#secret-item-load-secret-sync" title="secret_item_load_secret_sync ()"><code class="function">secret_item_load_secret_sync()</code></a> to load the secret</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_item_get_info_full()</code></td>
+<td>properties are loaded on a <a class="link" href="SecretItem.html" title="SecretItem"><span class="type">SecretItem</span></a> automatically, use
+			<a class="link" href="SecretItem.html#secret-item-load-secret" title="secret_item_load_secret ()"><code class="function">secret_item_load_secret()</code></a> to load the secret</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_item_get_info_full_sync()</code></td>
+<td>properties are loaded on a <a class="link" href="SecretItem.html" title="SecretItem"><span class="type">SecretItem</span></a> automatically, use
+			<a class="link" href="SecretItem.html#secret-item-load-secret-sync" title="secret_item_load_secret_sync ()"><code class="function">secret_item_load_secret_sync()</code></a> to load the secret</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_item_set_info()</code></td>
+<td>use the appropriate setter methods on <a class="link" href="SecretItem.html" title="SecretItem"><span class="type">SecretItem</span></a>
+</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_item_set_info_sync()</code></td>
+<td>use the appropriate setter methods on <a class="link" href="SecretItem.html" title="SecretItem"><span class="type">SecretItem</span></a>
+</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_item_get_attributes()</code></td>
+<td><a class="link" href="SecretItem.html#secret-item-get-attributes" title="secret_item_get_attributes ()"><code class="function">secret_item_get_attributes()</code></a></td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_item_get_attributes_sync()</code></td>
+<td><a class="link" href="SecretItem.html#secret-item-get-attributes" title="secret_item_get_attributes ()"><code class="function">secret_item_get_attributes()</code></a></td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_item_set_attributes()</code></td>
+<td><a class="link" href="SecretItem.html#secret-item-set-attributes" title="secret_item_set_attributes ()"><code class="function">secret_item_set_attributes()</code></a></td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_item_set_attributes_sync()</code></td>
+<td><a class="link" href="SecretItem.html#secret-item-set-attributes-sync" title="secret_item_set_attributes_sync ()"><code class="function">secret_item_set_attributes_sync()</code></a></td>
+</tr>
+<tr>
+<td><span class="type">GnomeKeyringItemType</span></td>
+<td>replaced by the name of a <a class="link" href="SecretSchema.html" title="SecretSchema"><span class="type">SecretSchema</span></a>
+</td>
+</tr>
+<tr>
+<td><span class="type">GnomeKeyringItemInfo</span></td>
+<td><a class="link" href="SecretItem.html" title="SecretItem"><span class="type">SecretItem</span></a></td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_item_info_new()</code></td>
+<td>no equivalent</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_item_info_copy()</code></td>
+<td>no equivalent</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_item_info_free()</code></td>
+<td>
+<a href="../gobject/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a> on the <a class="link" href="SecretItem.html" title="SecretItem"><span class="type">SecretItem</span></a>
+</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_item_info_get_display_name()</code></td>
+<td><a class="link" href="SecretItem.html#secret-item-get-label" title="secret_item_get_label ()"><code class="function">secret_item_get_label()</code></a></td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_item_info_set_display_name()</code></td>
+<td><a class="link" href="SecretItem.html#secret-item-set-label" title="secret_item_set_label ()"><code class="function">secret_item_set_label()</code></a></td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_item_info_get_ctime()</code></td>
+<td><a class="link" href="SecretItem.html#secret-item-get-created" title="secret_item_get_created ()"><code class="function">secret_item_get_created()</code></a></td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_item_info_get_mtime()</code></td>
+<td><a class="link" href="SecretItem.html#secret-item-get-modified" title="secret_item_get_modified ()"><code class="function">secret_item_get_modified()</code></a></td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_item_info_get_type()</code></td>
+<td><a class="link" href="SecretItem.html#secret-item-get-schema-name" title="secret_item_get_schema_name ()"><code class="function">secret_item_get_schema_name()</code></a></td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_item_info_set_type()</code></td>
+<td>
+<a class="link" href="SecretItem.html#secret-item-set-attributes" title="secret_item_set_attributes ()"><code class="function">secret_item_set_attributes()</code></a> with appropriate schema</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_item_info_get_secret()</code></td>
+<td><a class="link" href="SecretItem.html#secret-item-get-secret" title="secret_item_get_secret ()"><code class="function">secret_item_get_secret()</code></a></td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_item_info_set_secret()</code></td>
+<td>
+<a class="link" href="SecretItem.html#secret-item-set-secret" title="secret_item_set_secret ()"><code class="function">secret_item_set_secret()</code></a> and <a class="link" href="SecretItem.html#secret-item-set-secret-sync" title="secret_item_set_secret_sync ()"><code class="function">secret_item_set_secret_sync()</code></a>
+</td>
+</tr>
+<tr>
+<td><code class="literal">GNOME_KEYRING_ITEM_INFO_BASICS</code></td>
+<td>no equivalent, all basic item properties are loaded on <a class="link" href="SecretItem.html" title="SecretItem"><span class="type">SecretItem</span></a>
+			automatically</td>
+</tr>
+<tr>
+<td><code class="literal">GNOME_KEYRING_ITEM_INFO_SECRET</code></td>
+<td>use <a class="link" href="SecretItem.html#secret-item-load-secret" title="secret_item_load_secret ()"><code class="function">secret_item_load_secret()</code></a> and <a class="link" href="SecretItem.html#secret-item-load-secret-sync" title="secret_item_load_secret_sync ()"><code class="function">secret_item_load_secret_sync()</code></a> to load
+			the secret for an item.</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_item_info_set_display_name()</code></td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br class="table-break"></p>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32.1</div>
+</body>
+</html>

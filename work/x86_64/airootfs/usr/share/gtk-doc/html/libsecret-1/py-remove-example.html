@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Python example: Remove a password: Libsecret Library Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="Libsecret Library Reference Manual">
+<link rel="up" href="py-examples.html" title="Python examples">
+<link rel="prev" href="py-lookup-example.html" title="Python example: Lookup a password">
+<link rel="next" href="vala-examples.html" title="Vala examples">
+<meta name="generator" content="GTK-Doc V1.32.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="py-examples.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="py-lookup-example.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="vala-examples.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="py-remove-example"></a>Python example: Remove a password</h2></div></div></div>
+<p>Here's how to remove a password from the running secret service,
+			like gnome-keyring or ksecretservice.</p>
+<p>Each stored password has a set of attributes which are
+			used to find which password to remove. If multiple passwords match the
+			attributes, then the one stored most recently is removed.</p>
+<p>These examples use <a class="link" href="py-examples.html#py-schema-example" title="Python example: Define a password schema">the example
+			schema</a>.</p>
+<p>This first example removes a password asynchronously, and is
+			appropriate for GUI applications so that the UI does not block.</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="n">from</span> <span class="n">gi</span><span class="p">.</span><span class="n">repository</span> <span class="n">import</span> <span class="n">Secret</span>
+
+<span class="n">def</span> <span class="n">on_password_clear</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">unused</span><span class="p">)</span><span class="o">:</span>
+	<span class="n">removed</span> <span class="o">=</span> <span class="n">Secret</span><span class="p">.</span><span class="n">password_clear_finish</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+	<span class="cp"># removed will be true if the password was removed</span>
+
+<span class="n">Secret</span><span class="p">.</span><span class="n">password_clear</span><span class="p">(</span><span class="n">EXAMPLE_SCHEMA</span><span class="p">,</span> <span class="p">{</span> <span class="s">&quot;number&quot;</span><span class="o">:</span> <span class="s">&quot;8&quot;</span><span class="p">,</span> <span class="s">&quot;even&quot;</span><span class="o">:</span> <span class="s">&quot;true&quot;</span> <span class="p">},</span>
+                                              <span class="n">None</span><span class="p">,</span> <span class="n">on_password_clear</span><span class="p">)</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>This next example removes a password synchronously. The function
+			call will block until the removal completes. So this is appropriate for
+			non GUI applications.</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="n">from</span> <span class="n">gi</span><span class="p">.</span><span class="n">repository</span> <span class="n">import</span> <span class="n">Secret</span>
+
+<span class="n">removed</span> <span class="o">=</span> <span class="n">Secret</span><span class="p">.</span><span class="n">password_clear_sync</span><span class="p">(</span><span class="n">EXAMPLE_SCHEMA</span><span class="p">,</span> <span class="p">{</span> <span class="s">&quot;number&quot;</span><span class="o">:</span> <span class="s">&quot;8&quot;</span><span class="p">,</span> <span class="s">&quot;even&quot;</span><span class="o">:</span> <span class="s">&quot;true&quot;</span> <span class="p">},</span> <span class="n">None</span><span class="p">)</span>
+<span class="cp"># removed will be true if the password was removed</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32.1</div>
+</body>
+</html>

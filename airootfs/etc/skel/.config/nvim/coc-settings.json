@@ -1,0 +1,34 @@
+{
+  "suggest.enablePreselect": true,
+  "suggest.maxPreviewWidth":50,
+  "suggest.timeout": 5000,
+  "diagnostic.checkCurrentLine": true,
+  "emmet.includeLanguages": { "markdown": "html" },
+  "python.pythonPath": "python3",
+  "emmet.excludeLanguages": [],
+  "python.jediEnabled": true,
+  "list.normalMappings": {
+    "<C-c>": "do:exit"
+  },
+  "list.insertMappings": {
+    "<C-c>": "do:exit"
+  },
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp", "objc", "objcpp"],
+      "rootPatterns": [
+        ".ccls",
+        "compile_commands.json",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "initializationOptions": {
+        "cache": {
+          "directory": "/tmp/ccls"
+        }
+      }
+    }
+  }
+}

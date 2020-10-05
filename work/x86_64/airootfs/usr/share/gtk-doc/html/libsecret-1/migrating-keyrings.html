@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Keyring management: Libsecret Library Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="Libsecret Library Reference Manual">
+<link rel="up" href="migrating-api.html" title="API conversion">
+<link rel="prev" href="migrating-items.html" title="Item management">
+<link rel="next" href="migrating-locking.html" title="Locking and unlocking">
+<meta name="generator" content="GTK-Doc V1.32.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="migrating-api.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="migrating-items.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="migrating-locking.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="migrating-keyrings"></a>Keyring management</h2></div></div></div>
+<p>In libsecret keyrings are called 'collections'. This is the same
+	lingo as the underlying Secret Service DBus API. Keyrings are no longer
+	identified by simple keyring names. Normally applications just use the
+	default keyrings and these are identified by the aliases
+	<a class="link" href="libsecret-Password-storage.html#SECRET-COLLECTION-DEFAULT:CAPS" title="SECRET_COLLECTION_DEFAULT"><code class="literal">SECRET_COLLECTION_DEFAULT</code></a> and <a class="link" href="libsecret-Password-storage.html#SECRET-COLLECTION-SESSION:CAPS" title="SECRET_COLLECTION_SESSION"><code class="literal">SECRET_COLLECTION_SESSION</code></a>. It is also
+	possible to identify collections by their DBus object paths.</p>
+<p>Replacements for related libgnome-keyring functions and types
+	are described below:
+	</p>
+<div class="table">
+<a name="id-1.6.3.9.3.1"></a><p class="title"><b>Table 7. </b></p>
+<div class="table-contents"><table class="table" border="1">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>libgnome-keyring</th>
+<th>libsecret</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><code class="function">gnome_keyring_create()</code></td>
+<td><a class="link" href="SecretCollection.html#secret-collection-create" title="secret_collection_create ()"><code class="function">secret_collection_create()</code></a></td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_create_sync()</code></td>
+<td><a class="link" href="SecretCollection.html#secret-collection-create-sync" title="secret_collection_create_sync ()"><code class="function">secret_collection_create_sync()</code></a></td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_delete()</code></td>
+<td><a class="link" href="SecretCollection.html#secret-collection-delete" title="secret_collection_delete ()"><code class="function">secret_collection_delete()</code></a></td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_delete_sync()</code></td>
+<td><a class="link" href="SecretCollection.html#secret-collection-delete-sync" title="secret_collection_delete_sync ()"><code class="function">secret_collection_delete_sync()</code></a></td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_change_password()</code></td>
+<td>no equivalent, use platform specific DBus APIs</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_change_password_sync()</code></td>
+<td>no equivalent, use platform specific DBus APIs</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_list_keyring_names()</code></td>
+<td>
+<a class="link" href="SecretService.html#secret-service-load-collections" title="secret_service_load_collections ()"><code class="function">secret_service_load_collections()</code></a> and <a class="link" href="SecretService.html#secret-service-get-collections" title="secret_service_get_collections ()"><code class="function">secret_service_get_collections()</code></a>
+</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_list_keyring_names_sync()</code></td>
+<td>
+<a class="link" href="SecretService.html#secret-service-load-collections-sync" title="secret_service_load_collections_sync ()"><code class="function">secret_service_load_collections_sync()</code></a> and <a class="link" href="SecretService.html#secret-service-get-collections" title="secret_service_get_collections ()"><code class="function">secret_service_get_collections()</code></a>
+</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_set_default_keyring()</code></td>
+<td><a class="link" href="SecretService.html#secret-service-set-alias" title="secret_service_set_alias ()"><code class="function">secret_service_set_alias()</code></a></td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_set_default_keyring_sync()</code></td>
+<td><a class="link" href="SecretService.html#secret-service-set-alias-sync" title="secret_service_set_alias_sync ()"><code class="function">secret_service_set_alias_sync()</code></a></td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_get_default_keyring()</code></td>
+<td>
+<a class="link" href="SecretCollection.html#secret-collection-for-alias" title="secret_collection_for_alias ()"><code class="function">secret_collection_for_alias()</code></a> with <a class="link" href="libsecret-Password-storage.html#SECRET-COLLECTION-DEFAULT:CAPS" title="SECRET_COLLECTION_DEFAULT"><code class="literal">SECRET_COLLECTION_DEFAULT</code></a>
+</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_get_default_keyring_sync()</code></td>
+<td>
+<a class="link" href="SecretCollection.html#secret-collection-for-alias-sync" title="secret_collection_for_alias_sync ()"><code class="function">secret_collection_for_alias_sync()</code></a> with <a class="link" href="libsecret-Password-storage.html#SECRET-COLLECTION-DEFAULT:CAPS" title="SECRET_COLLECTION_DEFAULT"><code class="literal">SECRET_COLLECTION_DEFAULT</code></a>
+</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_list_item_ids()</code></td>
+<td>
+<a class="link" href="SecretCollection.html#secret-collection-load-items" title="secret_collection_load_items ()"><code class="function">secret_collection_load_items()</code></a> and <a class="link" href="SecretCollection.html#secret-collection-get-items" title="secret_collection_get_items ()"><code class="function">secret_collection_get_items()</code></a>
+</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_list_item_ids_sync()</code></td>
+<td>
+<a class="link" href="SecretCollection.html#secret-collection-load-items-sync" title="secret_collection_load_items_sync ()"><code class="function">secret_collection_load_items_sync()</code></a> and <a class="link" href="SecretCollection.html#secret-collection-get-items" title="secret_collection_get_items ()"><code class="function">secret_collection_get_items()</code></a>
+</td>
+</tr>
+<tr>
+<td><span class="type">GnomeKeyringInfo</span></td>
+<td>
+<a class="link" href="SecretCollection.html" title="SecretCollection"><span class="type">SecretCollection</span></a> and properties</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_get_info()</code></td>
+<td>no equivalent</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_get_info_sync()</code></td>
+<td>no equivalent</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_set_info()</code></td>
+<td>no equivalent, use property setters on <a class="link" href="SecretCollection.html" title="SecretCollection"><span class="type">SecretCollection</span></a>
+</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_set_info_sync()</code></td>
+<td>no equivalent, use property setters on <a class="link" href="SecretCollection.html" title="SecretCollection"><span class="type">SecretCollection</span></a>
+</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_info_free()</code></td>
+<td>no equivalent</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_info_copy()</code></td>
+<td>no equivalent</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_info_set_lock_on_idle()</code></td>
+<td>no equivalent</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_info_get_lock_on_idle()</code></td>
+<td>no equivalent</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_info_set_lock_timeout()</code></td>
+<td>no equivalent</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_info_get_lock_timeout()</code></td>
+<td>no equivalent</td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_info_get_mtime()</code></td>
+<td><a class="link" href="SecretCollection.html#secret-collection-get-modified" title="secret_collection_get_modified ()"><code class="function">secret_collection_get_modified()</code></a></td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_info_get_ctime()</code></td>
+<td><a class="link" href="SecretCollection.html#secret-collection-get-created" title="secret_collection_get_created ()"><code class="function">secret_collection_get_created()</code></a></td>
+</tr>
+<tr>
+<td><code class="function">gnome_keyring_info_get_is_locked()</code></td>
+<td><a class="link" href="SecretCollection.html#secret-collection-get-locked" title="secret_collection_get_locked ()"><code class="function">secret_collection_get_locked()</code></a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br class="table-break"></p>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32.1</div>
+</body>
+</html>

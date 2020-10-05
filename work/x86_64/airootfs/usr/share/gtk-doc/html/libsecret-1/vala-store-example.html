@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Vala example: Store a password: Libsecret Library Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="Libsecret Library Reference Manual">
+<link rel="up" href="vala-examples.html" title="Vala examples">
+<link rel="prev" href="vala-examples.html" title="Vala examples">
+<link rel="next" href="vala-lookup-example.html" title="Vala example: Lookup a password">
+<meta name="generator" content="GTK-Doc V1.32.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="vala-examples.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="vala-examples.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="vala-lookup-example.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="vala-store-example"></a>Vala example: Store a password</h2></div></div></div>
+<p>Here's how to store a password in the running secret service,
+			like gnome-keyring or ksecretservice.</p>
+<p>Each stored password has a set of attributes which are later
+			used to lookup the password. The attributes should not contain
+			secrets, as they are not stored in an encrypted fashion.</p>
+<p>These examples use <a class="link" href="vala-examples.html#vala-schema-example" title="Vala example: Define a password schema">the example
+			schema</a>.</p>
+<p>This first example stores a password asynchronously, and is
+			appropriate for GUI applications so that the UI does not block.</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="n">var</span> <span class="n">attributes</span> <span class="o">=</span> <span class="n">new</span> <span class="n">GLib</span><span class="p">.</span><span class="n">HashTable</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="n">string</span><span class="o">&gt;</span> <span class="p">();</span>
+<span class="n">attributes</span><span class="p">[</span><span class="s">&quot;number&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;8&quot;</span><span class="p">;</span>
+<span class="n">attributes</span><span class="p">[</span><span class="s">&quot;string&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;eight&quot;</span><span class="p">;</span>
+<span class="n">attributes</span><span class="p">[</span><span class="s">&quot;even&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;true&quot;</span><span class="p">;</span>
+
+<span class="n">Secret</span><span class="p">.</span><span class="n">password_storev</span><span class="p">.</span><span class="n">begin</span> <span class="p">(</span><span class="n">example_schema</span><span class="p">,</span> <span class="n">attributes</span><span class="p">,</span> <span class="n">Secret</span><span class="p">.</span><span class="n">COLLECTION_DEFAULT</span><span class="p">,</span>
+                              <span class="s">&quot;The label&quot;</span><span class="p">,</span> <span class="s">&quot;the password&quot;</span><span class="p">,</span> <span class="n">null</span><span class="p">,</span> <span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">async_res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+	<span class="kt">bool</span> <span class="n">res</span> <span class="o">=</span> <span class="n">Secret</span><span class="p">.</span><span class="n">password_store</span><span class="p">.</span><span class="n">end</span> <span class="p">(</span><span class="n">async_res</span><span class="p">);</span>
+	<span class="cm">/* ... do something now that the password has been stored */</span>
+<span class="p">});</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>If you are already inside of an async function, you can also
+			use the yield keyword:</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="n">var</span> <span class="n">attributes</span> <span class="o">=</span> <span class="n">new</span> <span class="n">GLib</span><span class="p">.</span><span class="n">HashTable</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="n">string</span><span class="o">&gt;</span> <span class="p">();</span>
+<span class="n">attributes</span><span class="p">[</span><span class="s">&quot;number&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;8&quot;</span><span class="p">;</span>
+<span class="n">attributes</span><span class="p">[</span><span class="s">&quot;string&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;eight&quot;</span><span class="p">;</span>
+<span class="n">attributes</span><span class="p">[</span><span class="s">&quot;even&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;true&quot;</span><span class="p">;</span>
+
+<span class="kt">bool</span> <span class="n">res</span> <span class="o">=</span> <span class="n">yield</span> <span class="n">Secret</span><span class="p">.</span><span class="n">password_storev</span> <span class="p">(</span><span class="n">example_schema</span><span class="p">,</span> <span class="n">attributes</span><span class="p">,</span>
+                                         <span class="n">Secret</span><span class="p">.</span><span class="n">COLLECTION_DEFAULT</span><span class="p">,</span> <span class="s">&quot;The label&quot;</span><span class="p">,</span>
+                                         <span class="s">&quot;the password&quot;</span><span class="p">,</span> <span class="n">null</span><span class="p">);</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>If you would like to avoid creating a hash table for the
+			attributes you can just use the variadic version:</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="kt">bool</span> <span class="n">res</span> <span class="o">=</span> <span class="n">yield</span> <span class="n">Secret</span><span class="p">.</span><span class="n">password_store</span> <span class="p">(</span><span class="n">example_schema</span><span class="p">,</span> <span class="n">Secret</span><span class="p">.</span><span class="n">COLLECTION_DEFAULT</span><span class="p">,</span> <span class="s">&quot;The label&quot;</span><span class="p">,</span>
+                                        <span class="s">&quot;the password&quot;</span><span class="p">,</span> <span class="n">null</span><span class="p">,</span> <span class="s">&quot;number&quot;</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="s">&quot;string&quot;</span><span class="p">,</span> <span class="s">&quot;eight&quot;</span><span class="p">,</span>
+                                        <span class="s">&quot;even&quot;</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>This next example stores a password synchronously. The function
+			call will block until the password is stored. So this is appropriate for
+			non GUI applications.</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="n">Secret</span><span class="p">.</span><span class="n">password_store_sync</span> <span class="p">(</span><span class="n">example_schema</span><span class="p">,</span> <span class="n">attributes</span><span class="p">,</span> <span class="n">Secret</span><span class="p">.</span><span class="n">COLLECTION_DEFAULT</span><span class="p">,</span>
+                            <span class="s">&quot;The label&quot;</span><span class="p">,</span> <span class="s">&quot;the password&quot;</span><span class="p">,</span> <span class="n">null</span><span class="p">,</span>
+                            <span class="s">&quot;number&quot;</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="s">&quot;string&quot;</span><span class="p">,</span> <span class="s">&quot;nine&quot;</span><span class="p">,</span> <span class="s">&quot;even&quot;</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.32.1</div>
+</body>
+</html>

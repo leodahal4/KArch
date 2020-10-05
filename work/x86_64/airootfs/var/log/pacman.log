@@ -1,0 +1,220 @@
+[2020-10-05T10:25:09+0545] [PACMAN] Running 'pacman -r work/x86_64/airootfs -Sy --config=work/pacman.conf base syslinux'
+[2020-10-05T10:25:09+0545] [PACMAN] synchronizing package lists
+[2020-10-05T10:28:18+0545] [ALPM] transaction started
+[2020-10-05T10:28:18+0545] [ALPM] installed iana-etc (20200905-1)
+[2020-10-05T10:28:18+0545] [ALPM] installed filesystem (2020.09.03-1)
+[2020-10-05T10:28:18+0545] [ALPM] installed linux-api-headers (5.8-1)
+[2020-10-05T10:28:19+0545] [ALPM] installed tzdata (2020a-1)
+[2020-10-05T10:28:19+0545] [ALPM] installed glibc (2.32-4)
+[2020-10-05T10:28:19+0545] [ALPM] installed gcc-libs (10.2.0-3)
+[2020-10-05T10:28:20+0545] [ALPM] installed ncurses (6.2-1)
+[2020-10-05T10:28:20+0545] [ALPM] installed readline (8.0.004-1)
+[2020-10-05T10:28:20+0545] [ALPM] installed bash (5.0.018-1)
+[2020-10-05T10:28:20+0545] [ALPM] installed attr (2.4.48-3)
+[2020-10-05T10:28:20+0545] [ALPM] installed acl (2.2.53-3)
+[2020-10-05T10:28:20+0545] [ALPM] installed gmp (6.2.0-1)
+[2020-10-05T10:28:20+0545] [ALPM] installed libcap (2.43-1)
+[2020-10-05T10:28:20+0545] [ALPM] installed gdbm (1.18.1-3)
+[2020-10-05T10:28:20+0545] [ALPM] installed db (5.3.28-5)
+[2020-10-05T10:28:20+0545] [ALPM] installed libxcrypt (4.4.17-1)
+[2020-10-05T10:28:20+0545] [ALPM] installed perl (5.32.0-3)
+[2020-10-05T10:28:21+0545] [ALPM] installed openssl (1.1.1.h-1)
+[2020-10-05T10:28:21+0545] [ALPM] installed coreutils (8.32-1)
+[2020-10-05T10:28:21+0545] [ALPM] installed zlib (1:1.2.11-4)
+[2020-10-05T10:28:21+0545] [ALPM] installed xz (5.2.5-1)
+[2020-10-05T10:28:21+0545] [ALPM] installed bzip2 (1.0.8-3)
+[2020-10-05T10:28:21+0545] [ALPM] installed libseccomp (2.4.2-1)
+[2020-10-05T10:28:21+0545] [ALPM] installed file (5.39-1)
+[2020-10-05T10:28:21+0545] [ALPM] installed findutils (4.7.0-2)
+[2020-10-05T10:28:21+0545] [ALPM] installed mpfr (4.1.0-1)
+[2020-10-05T10:28:21+0545] [ALPM] installed gawk (5.1.0-1)
+[2020-10-05T10:28:21+0545] [ALPM] installed pcre (8.44-1)
+[2020-10-05T10:28:21+0545] [ALPM] installed grep (3.4-1)
+[2020-10-05T10:28:21+0545] [ALPM] installed libgpg-error (1.39-1)
+[2020-10-05T10:28:21+0545] [ALPM] installed libgcrypt (1.8.6-1)
+[2020-10-05T10:28:21+0545] [ALPM] installed lz4 (1:1.9.2-2)
+[2020-10-05T10:28:21+0545] [ALPM] installed zstd (1.4.5-1)
+[2020-10-05T10:28:21+0545] [ALPM] installed systemd-libs (246.6-1)
+[2020-10-05T10:28:21+0545] [ALPM] installed procps-ng (3.3.16-2)
+[2020-10-05T10:28:21+0545] [ALPM] installed sed (4.8-1)
+[2020-10-05T10:28:21+0545] [ALPM] installed tar (1.32-3)
+[2020-10-05T10:28:21+0545] [ALPM] installed libffi (3.3-3)
+[2020-10-05T10:28:21+0545] [ALPM] installed util-linux-libs (2.36-4)
+[2020-10-05T10:28:21+0545] [ALPM] installed glib2 (2.66.0-1)
+[2020-10-05T10:28:21+0545] [ALPM] installed libunistring (0.9.10-2)
+[2020-10-05T10:28:22+0545] [ALPM] installed icu (67.1-1)
+[2020-10-05T10:28:22+0545] [ALPM] installed libxml2 (2.9.10-2)
+[2020-10-05T10:28:22+0545] [ALPM] installed libcroco (0.6.13-2)
+[2020-10-05T10:28:22+0545] [ALPM] installed gettext (0.21-1)
+[2020-10-05T10:28:22+0545] [ALPM] installed hwids (20200813.1-1)
+[2020-10-05T10:28:22+0545] [ALPM] installed kmod (27-2)
+[2020-10-05T10:28:22+0545] [ALPM] installed pciutils (3.7.0-1)
+[2020-10-05T10:28:22+0545] [ALPM] installed psmisc (23.3-2)
+[2020-10-05T10:28:22+0545] [ALPM] installed e2fsprogs (1.45.6-3)
+[2020-10-05T10:28:22+0545] [ALPM] installed libsasl (2.1.27-3)
+[2020-10-05T10:28:22+0545] [ALPM] installed libldap (2.4.53-1)
+[2020-10-05T10:28:22+0545] [ALPM] installed keyutils (1.6.3-1)
+[2020-10-05T10:28:22+0545] [ALPM] installed krb5 (1.18.2-1)
+[2020-10-05T10:28:22+0545] [ALPM] installed libtirpc (1.2.6-1)
+[2020-10-05T10:28:22+0545] [ALPM] installed pambase (20200721.1-2)
+[2020-10-05T10:28:22+0545] [ALPM] installed libcap-ng (0.7.11-2)
+[2020-10-05T10:28:22+0545] [ALPM] installed audit (2.8.5-6)
+[2020-10-05T10:28:22+0545] [ALPM] installed pam (1.4.0-3)
+[2020-10-05T10:28:22+0545] [ALPM] installed shadow (4.8.1-4)
+[2020-10-05T10:28:22+0545] [ALPM] installed util-linux (2.36-4)
+[2020-10-05T10:28:22+0545] [ALPM] installed less (551-3)
+[2020-10-05T10:28:22+0545] [ALPM] installed gzip (1.10-3)
+[2020-10-05T10:28:22+0545] [ALPM] installed licenses (20200427-1)
+[2020-10-05T10:28:22+0545] [ALPM] installed expat (2.2.9-3)
+[2020-10-05T10:28:22+0545] [ALPM] installed libarchive (3.4.3-1)
+[2020-10-05T10:28:22+0545] [ALPM] installed libtasn1 (4.16.0-1)
+[2020-10-05T10:28:22+0545] [ALPM] installed libp11-kit (0.23.21-1)
+[2020-10-05T10:28:22+0545] [ALPM] installed p11-kit (0.23.21-1)
+[2020-10-05T10:28:22+0545] [ALPM] installed ca-certificates-utils (20181109-4)
+[2020-10-05T10:28:22+0545] [ALPM] installed ca-certificates-mozilla (3.57-1)
+[2020-10-05T10:28:22+0545] [ALPM] installed ca-certificates (20181109-4)
+[2020-10-05T10:28:22+0545] [ALPM] installed libssh2 (1.9.0-2)
+[2020-10-05T10:28:22+0545] [ALPM] installed libidn2 (2.3.0-1)
+[2020-10-05T10:28:22+0545] [ALPM] installed libpsl (0.21.1-1)
+[2020-10-05T10:28:22+0545] [ALPM] installed libnghttp2 (1.41.0-1)
+[2020-10-05T10:28:22+0545] [ALPM] installed curl (7.72.0-2)
+[2020-10-05T10:28:22+0545] [ALPM] installed npth (1.6-2)
+[2020-10-05T10:28:22+0545] [ALPM] installed libksba (1.4.0-2)
+[2020-10-05T10:28:22+0545] [ALPM] installed libassuan (2.5.3-2)
+[2020-10-05T10:28:22+0545] [ALPM] installed libsecret (0.20.3-1)
+[2020-10-05T10:28:22+0545] [ALPM] installed pinentry (1.1.0-5)
+[2020-10-05T10:28:22+0545] [ALPM] installed nettle (3.6-1)
+[2020-10-05T10:28:23+0545] [ALPM] installed gnutls (3.6.15-1)
+[2020-10-05T10:28:23+0545] [ALPM] installed sqlite (3.33.0-2)
+[2020-10-05T10:28:23+0545] [ALPM] installed gnupg (2.2.23-1)
+[2020-10-05T10:28:23+0545] [ALPM] installed gpgme (1.14.0-1)
+[2020-10-05T10:28:23+0545] [ALPM] installed pacman-mirrorlist (20200920-1)
+[2020-10-05T10:28:23+0545] [ALPM] installed archlinux-keyring (20200820-1)
+[2020-10-05T10:28:23+0545] [ALPM] installed pacman (5.2.2-1)
+[2020-10-05T10:28:23+0545] [ALPM] installed device-mapper (2.02.187-3)
+[2020-10-05T10:28:23+0545] [ALPM] installed popt (1.18-1)
+[2020-10-05T10:28:23+0545] [ALPM] installed json-c (0.15-1)
+[2020-10-05T10:28:23+0545] [ALPM] installed argon2 (20190702-3)
+[2020-10-05T10:28:23+0545] [ALPM] installed cryptsetup (2.3.4-1)
+[2020-10-05T10:28:23+0545] [ALPM] installed dbus (1.12.20-1)
+[2020-10-05T10:28:23+0545] [ALPM] installed libmnl (1.0.4-3)
+[2020-10-05T10:28:23+0545] [ALPM] installed libnftnl (1.1.7-1)
+[2020-10-05T10:28:23+0545] [ALPM] installed libnl (3.5.0-2)
+[2020-10-05T10:28:23+0545] [ALPM] installed libusb (1.0.23-2)
+[2020-10-05T10:28:23+0545] [ALPM] installed libpcap (1.9.1-2)
+[2020-10-05T10:28:23+0545] [ALPM] installed libnfnetlink (1.0.1-4)
+[2020-10-05T10:28:23+0545] [ALPM] installed libnetfilter_conntrack (1.0.8-1)
+[2020-10-05T10:28:23+0545] [ALPM] installed iptables (1:1.8.5-2)
+[2020-10-05T10:28:23+0545] [ALPM] installed kbd (2.3.0-2)
+[2020-10-05T10:28:23+0545] [ALPM] installed libelf (0.181-1)
+[2020-10-05T10:28:23+0545] [ALPM] installed pcre2 (10.35-1)
+[2020-10-05T10:28:23+0545] [ALPM] installed systemd (246.6-1)
+[2020-10-05T10:28:23+0545] [ALPM-SCRIPTLET] Initializing machine ID from random generator.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group sys with gid 3.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group mem with gid 8.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group ftp with gid 11.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group mail with gid 12.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group log with gid 19.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group smmsp with gid 25.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group proc with gid 26.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group games with gid 50.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group lock with gid 54.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group network with gid 90.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group floppy with gid 94.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group scanner with gid 96.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group power with gid 98.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group adm with gid 999.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group wheel with gid 998.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group kmem with gid 997.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group tty with gid 5.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group utmp with gid 996.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group audio with gid 995.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group disk with gid 994.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group input with gid 993.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group kvm with gid 992.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group lp with gid 991.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group optical with gid 990.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group render with gid 989.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group storage with gid 988.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group uucp with gid 987.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group video with gid 986.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group users with gid 985.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group systemd-journal with gid 984.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group rfkill with gid 983.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group bin with gid 1.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating user bin (n/a) with uid 1 and gid 1.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group daemon with gid 2.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating user daemon (n/a) with uid 2 and gid 2.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating user mail (n/a) with uid 8 and gid 12.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating user ftp (n/a) with uid 14 and gid 11.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group http with gid 33.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating user http (n/a) with uid 33 and gid 33.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group nobody with gid 65534.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating user nobody (Nobody) with uid 65534 and gid 65534.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group dbus with gid 81.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating user dbus (System Message Bus) with uid 81 and gid 81.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group systemd-journal-remote with gid 982.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating user systemd-journal-remote (systemd Journal Remote) with uid 982 and gid 982.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group systemd-network with gid 981.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating user systemd-network (systemd Network Management) with uid 981 and gid 981.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group systemd-resolve with gid 980.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating user systemd-resolve (systemd Resolver) with uid 980 and gid 980.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group systemd-timesync with gid 979.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating user systemd-timesync (systemd Time Synchronization) with uid 979 and gid 979.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group systemd-coredump with gid 978.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating user systemd-coredump (systemd Core Dumper) with uid 978 and gid 978.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating group uuidd with gid 68.
+[2020-10-05T10:28:25+0545] [ALPM-SCRIPTLET] Creating user uuidd (n/a) with uid 68 and gid 68.
+[2020-10-05T10:28:33+0545] [ALPM-SCRIPTLET] Created symlink /etc/systemd/system/getty.target.wants/getty@tty1.service -> /usr/lib/systemd/system/getty@.service.
+[2020-10-05T10:28:33+0545] [ALPM-SCRIPTLET] Created symlink /etc/systemd/system/multi-user.target.wants/remote-fs.target -> /usr/lib/systemd/system/remote-fs.target.
+[2020-10-05T10:28:33+0545] [ALPM-SCRIPTLET] :: Append 'init=/usr/lib/systemd/systemd' to your kernel command line in your
+[2020-10-05T10:28:33+0545] [ALPM-SCRIPTLET]    bootloader to replace sysvinit with systemd, or install systemd-sysvcompat
+[2020-10-05T10:28:33+0545] [ALPM] installed systemd-sysvcompat (246.6-1)
+[2020-10-05T10:28:33+0545] [ALPM] installed iputils (20200821-1)
+[2020-10-05T10:28:33+0545] [ALPM] installed iproute2 (5.8.0-1)
+[2020-10-05T10:28:33+0545] [ALPM] installed base (2-2)
+[2020-10-05T10:28:33+0545] [ALPM] installed syslinux (6.04.pre2.r11.gbf6db5b4-3)
+[2020-10-05T10:28:33+0545] [ALPM-SCRIPTLET] 
+[2020-10-05T10:28:33+0545] [ALPM-SCRIPTLET] ==> For setting up Syslinux BIOS using the syslinux-install_update script follow
+[2020-10-05T10:28:33+0545] [ALPM-SCRIPTLET]     https://wiki.archlinux.org/index.php/Syslinux#Automatic_Install
+[2020-10-05T10:28:34+0545] [ALPM] transaction completed
+[2020-10-05T10:28:34+0545] [ALPM] running '20-systemd-sysusers.hook'...
+[2020-10-05T10:28:35+0545] [ALPM] running '30-systemd-catalog.hook'...
+[2020-10-05T10:28:35+0545] [ALPM] running '30-systemd-daemon-reload.hook'...
+[2020-10-05T10:28:35+0545] [ALPM-SCRIPTLET] Running in chroot, ignoring command 'daemon-reload'
+[2020-10-05T10:28:35+0545] [ALPM] running '30-systemd-hwdb.hook'...
+[2020-10-05T10:28:37+0545] [ALPM] running '30-systemd-sysctl.hook'...
+[2020-10-05T10:28:37+0545] [ALPM-SCRIPTLET] Not setting net/ipv4/conf/all/rp_filter (explicit setting exists).
+[2020-10-05T10:28:37+0545] [ALPM-SCRIPTLET] Not setting net/ipv4/conf/default/rp_filter (explicit setting exists).
+[2020-10-05T10:28:37+0545] [ALPM-SCRIPTLET] Not setting net/ipv4/conf/all/accept_source_route (explicit setting exists).
+[2020-10-05T10:28:37+0545] [ALPM-SCRIPTLET] Not setting net/ipv4/conf/default/accept_source_route (explicit setting exists).
+[2020-10-05T10:28:37+0545] [ALPM-SCRIPTLET] Not setting net/ipv4/conf/all/promote_secondaries (explicit setting exists).
+[2020-10-05T10:28:37+0545] [ALPM-SCRIPTLET] Not setting net/ipv4/conf/default/promote_secondaries (explicit setting exists).
+[2020-10-05T10:28:37+0545] [ALPM] running '30-systemd-tmpfiles.hook'...
+[2020-10-05T10:28:37+0545] [ALPM] running '30-systemd-udev-reload.hook'...
+[2020-10-05T10:28:37+0545] [ALPM-SCRIPTLET] Running in chroot, ignoring request.
+[2020-10-05T10:28:37+0545] [ALPM] running '30-systemd-update.hook'...
+[2020-10-05T10:28:37+0545] [ALPM] running '40-update-ca-trust.hook'...
+[2020-10-05T10:28:38+0545] [ALPM] running 'dbus-reload.hook'...
+[2020-10-05T10:28:38+0545] [ALPM-SCRIPTLET] Running in chroot, ignoring command 'try-reload-or-restart'
+[2020-10-05T10:28:38+0545] [ALPM] running 'detect-old-perl-modules.hook'...
+[2020-10-05T10:28:38+0545] [PACMAN] Running 'pacman -r work/x86_64/airootfs -Sy --config=work/pacman.conf haveged intel-ucode amd-ucode memtest86+ mkinitcpio-nfs-utils nbd zsh efitools'
+[2020-10-05T10:28:38+0545] [PACMAN] synchronizing package lists
+[2020-10-05T13:43:50+0545] [ALPM] transaction started
+[2020-10-05T13:43:50+0545] [ALPM] installed haveged (1.9.13-1)
+[2020-10-05T13:43:50+0545] [ALPM] installed intel-ucode (20200616-1)
+[2020-10-05T13:43:50+0545] [ALPM] installed amd-ucode (20200916.00a84c5-1)
+[2020-10-05T13:43:50+0545] [ALPM] installed memtest86+ (5.01-4)
+[2020-10-05T13:43:50+0545] [ALPM] installed mkinitcpio-nfs-utils (0.3-7)
+[2020-10-05T13:43:50+0545] [ALPM] installed nbd (3.20-2)
+[2020-10-05T13:43:50+0545] [ALPM] installed zsh (5.8-1)
+[2020-10-05T13:43:50+0545] [ALPM] installed efitools (1.9.2-3)
+[2020-10-05T13:43:51+0545] [ALPM] transaction completed
+[2020-10-05T13:43:51+0545] [ALPM] running '20-systemd-sysusers.hook'...
+[2020-10-05T13:43:51+0545] [ALPM-SCRIPTLET] Creating group nbd with gid 977.
+[2020-10-05T13:43:51+0545] [ALPM-SCRIPTLET] Creating user nbd (Network Block Device) with uid 977 and gid 977.
+[2020-10-05T13:43:51+0545] [ALPM] running '30-systemd-daemon-reload.hook'...
+[2020-10-05T13:43:51+0545] [ALPM-SCRIPTLET] Running in chroot, ignoring command 'daemon-reload'
+[2020-10-05T13:43:51+0545] [ALPM] running '30-systemd-update.hook'...
+[2020-10-05T13:43:51+0545] [PACMAN] Running 'pacman -r work/x86_64/airootfs -Sy --config=work/pacman.conf arch-install-scripts b43-fwcutter base-devel broadcom-wl btrfs-progs clonezilla crda darkhttpd ddrescue dhclient dhcpcd dialog diffutils dmraid dnsmasq dnsutils dosfstools elinks ethtool exfat-utils f2fs-tools fsarchiver gpm gptfdisk grub ipw2100-fw ipw2200-fw irssi iwd jfsutils lftp linux-firmware lsscsi lvm2 man-db man-pages mdadm mtools ndisc6 netctl nfs-utils nilfs-utils ntp openconnect partclone parted partimage ppp pptpclient refind reiserfsprogs rp-pppoe rsync sdparm sg3_utils smartmontools sudo tcpdump testdisk usb_modeswitch usbutils vpnc wget wireless-regdb wireless_tools wpa_supplicant wvdial xfsprogs xl2tpd firefox neovim nodejs termite xorg xorg-server xorg-twm xorg-xinit plasma-desktop bash-completion composer dolphin fzf linux linux-headers linux-lts linux-lts-headers pacman-contrib plasma-meta powerline powerline-fonts pulseaudio-bluetooth pulseaudio-zeroconf python-virtualenv the_silver_searcher tmux tokei torbrowser-launcher transmission-gtk tree virtualbox virtualbox-guest-iso virtualbox-guest-utils virtualbox-host-dkms vlc xdg-user-dirs xf86-video-intel networkmanager wireless_tools wpa_supplicant'
+[2020-10-05T13:43:51+0545] [PACMAN] synchronizing package lists

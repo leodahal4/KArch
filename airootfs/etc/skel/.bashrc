@@ -28,8 +28,8 @@ alias ..="cd .."
 alias vimrc="nvim ~/.config/nvim/init.vim"
 alias bashrc="nvim ~/.bashrc"
 alias nivm="nvim"
-alias cta='cat'
-alias gerp='grep'
+alias cat='cat'
+alias grep='grep --color=auto '
 alias sl='ls'
 alias update="pacman -Syu && flatpak update"
 alias lg="lazygit"

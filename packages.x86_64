@@ -105,7 +105,7 @@ xfsprogs
 xl2tpd
 
 # Common
-yay-git
+python-pip
 xorg-bdftopcf
 xorg-docs
 xorg-font-util
@@ -193,7 +193,6 @@ kdeconnect
 zsh
 zsh-completions
 neovim
-neovim-remote
 nodejs
 termite
 bash-completion
@@ -214,15 +213,19 @@ fakeroot
 feh
 file
 kdialog
-lazygit-git
 m4
 make
 man-pages
 mtools
 unrar
 unzip
-zoom
 # network
 networkmanager
 wireless_tools
 wpa_supplicant
+
+# Merin
+xfce4
+xfce4-goodies
+postgresql-10.2-1
+

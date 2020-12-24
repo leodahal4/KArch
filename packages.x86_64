@@ -159,9 +159,6 @@ which
 wget
 firefox
 xorg
-xorg-server
-xorg-twm
-xorg-xinit
 fzf
 python-virtualenv
 torbrowser-launcher
@@ -199,7 +196,6 @@ bash-completion
 linux-lts
 linux-lts-headers
 pacman-contrib
-plasma-meta
 powerline
 powerline-fonts
 tokei
@@ -219,13 +215,26 @@ man-pages
 mtools
 unrar
 unzip
+plasma-meta
+plasma
+plasma-wayland-session
 # network
 networkmanager
 wireless_tools
 wpa_supplicant
 
+# Ranjan
+jdk7-openjdk
+jdk11-openjdk
+# intellij-idea-ultimate-edition
+mariadb
+maven
+code
+#postman
+#chrome
+
 # Merin
-postman
+#postman
 xbindkeys_config-gtk2 0.1.3-5
 xfce4
 xfce4-goodies

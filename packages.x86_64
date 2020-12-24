@@ -105,6 +105,57 @@ xfsprogs
 xl2tpd
 
 # Common
+python-pip
+xorg-bdftopcf
+xorg-docs
+xorg-font-util
+xorg-fonts-100dpi
+xorg-fonts-75dpi
+xorg-fonts-encodings
+xorg-iceauth
+xorg-mkfontscale
+xorg-server
+xorg-server-common
+xorg-server-devel
+xorg-server-xephyr
+xorg-server-xnest
+xorg-server-xvfb
+xorg-sessreg
+xorg-setxkbmap
+xorg-smproxy
+xorg-twm
+xorg-x11perf
+xorg-xauth
+xorg-xbacklight
+xorg-xcmsdb
+xorg-xcursorgen
+xorg-xdpyinfo
+xorg-xdriinfo
+xorg-xev
+xorg-xgamma
+xorg-xhost
+xorg-xinit
+xorg-xinput
+xorg-xkbcomp
+xorg-xkbevd
+xorg-xkbutils
+xorg-xkill
+xorg-xlsatoms
+xorg-xlsclients
+xorg-xmodmap
+xorg-xpr
+xorg-xprop
+xorg-xrandr
+xorg-xrdb
+xorg-xrefresh
+xorg-xset
+xorg-xsetroot
+xorg-xvinfo
+xorg-xwayland
+xorg-xwd
+xorg-xwininfo
+xorg-xwud
+>>>>>>> e4c6b304f3047f7cc1d4ae6d061fbac7e0608055
 which
 wget
 firefox
@@ -173,11 +224,6 @@ networkmanager
 wireless_tools
 wpa_supplicant
 
-
-
-
-
-
 # Ranjan
 jdk7-openjdk
 jdk11-openjdk
@@ -187,3 +233,9 @@ maven
 code
 # postman
 # chrome
+# Merin
+postman
+xbindkeys_config-gtk2 0.1.3-5
+xfce4
+xfce4-goodies
+postgresql-10.2-1

@@ -155,7 +155,6 @@ xorg-xwayland
 xorg-xwd
 xorg-xwininfo
 xorg-xwud
->>>>>>> e4c6b304f3047f7cc1d4ae6d061fbac7e0608055
 which
 wget
 firefox
@@ -219,17 +218,26 @@ mtools
 unrar
 unzip
 <<<<<<< HEAD
+<<<<<<< HEAD
 plasma-meta
 plasma
 plasma-wayland-session
 =======
 >>>>>>> e4c6b304f3047f7cc1d4ae6d061fbac7e0608055
+=======
+plasma-meta
+plasma
+plasma-wayland-session
+>>>>>>> dd0ecdce0e16bfa586a4174db0e5c4467d7a74b6
 # network
 networkmanager
 wireless_tools
 wpa_supplicant
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> dd0ecdce0e16bfa586a4174db0e5c4467d7a74b6
 # Ranjan
 jdk7-openjdk
 jdk11-openjdk
@@ -237,17 +245,27 @@ jdk11-openjdk
 mariadb
 maven
 code
+<<<<<<< HEAD
 # postman
 # chrome
 =======
 >>>>>>> e4c6b304f3047f7cc1d4ae6d061fbac7e0608055
+=======
+#postman
+#chrome
+
+>>>>>>> dd0ecdce0e16bfa586a4174db0e5c4467d7a74b6
 # Merin
-postman
+#postman
 xbindkeys_config-gtk2 0.1.3-5
 xfce4
 xfce4-goodies
 postgresql-10.2-1
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> e4c6b304f3047f7cc1d4ae6d061fbac7e0608055
+=======
+
+>>>>>>> dd0ecdce0e16bfa586a4174db0e5c4467d7a74b6

@@ -1,2 +1,2 @@
 %wheel% ALL=(ALL)NOPASSWD:ALL
-liveuser ALL=(ALL) ALL
+bhole ALL=(ALL) ALL
